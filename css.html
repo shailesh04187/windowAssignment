@@ -1,0 +1,201 @@
+<!Doc html>
+<html>
+<head>
+<title>css</title>
+</head>
+<body>
+
+<h1>css</h1>
+
+<p><b>• CSS (Cascading Style Sheets) </b>is for the
+formatting side of the Web</p>
+<p>• CSS describes how rendered HTML documents
+should look.</p>
+<p>• CSS considers the physical and visual display of
+the document (the Style)</p>
+
+<h1>Advantages of CSS</h1>
+<p>• The use of CSS separates document layout from
+document content.</p>
+<p>– Different people can be responsible for the two parts.</p>
+<p>– Document author can focus on content.</p>
+<p>– Graphic designer can focus on layout.</p>
+<p>• A single file can control the look of an entire web
+site.</p>
+<p>– Easy to modify look of web site without affecting its contents.</p>
+<p>– Easy to obtain a consistent look (the R in CRAP)</p>
+<p>• If done correctly, documents degrade gracefully
+on platforms that don't support visual formatting.</p>
+
+<h1>Disadvantages of CSS</h1>
+<b>• More to learn</b>
+<p>– CSS is powerful but complex.</p>
+<b>• Not fully supported on some browsers</b>
+<p>– Even some modern browsers are not fully CSS 2 compliant.</p>
+<b>• The formatting is separated from the document</b>
+<p>– Makes it hard to write a document and format it
+simultaneously.</p>
+
+
+<h1>How to Write a Document</h1>
+<b>1.Decide what you want to write</b>
+<p>● First and foremost the content of the document is important.</p>
+<p>● Decide on the logical structure of the document.</p>
+<b>2.Write it</b>
+<p>● Write the document content.</p>
+<p>● Markup the document's logical structure.</p>
+<b>3.Format it</b>
+<p>● Use CSS to do formatting</p>
+<p>● Add other formatting-specific data (e.g., navigation).</p>
+<p>● Points 1 and 2 should take the majority of the
+time.</p>
+
+
+<h1>Using CSS</h1>
+<p>• There are three ways to use CSS.</p>
+<b>• External Style Sheets</b>
+<p>– Uses the LINK tag (in the document HEAD)</p>
+<p>link rel=”stylesheet” href=”../morin.css”
+ type=”text/css”</p>
+<b>• Inline Style Sheets</b>
+<p>– The STYLE tag (in the document HEAD)</p>
+<p>style type=”text/css”</p>
+<p>  CSS information goes here </p>
+<p>style</p>
+
+<h1>CSS with Class</h1>
+<p>• (Almost) all HTML tags can have an optional.</p>
+<b>CLASS attribute</b>
+<p>• This works nicely in conjunction with CSS:</p>
+<p>style type=”text/css”></p>
+<p> p.blogentry {</p>
+ <p>font-size: 12pt;</p>
+<p> font-family: “Luxi Serif”, serif;</p>
+<p> }</p>
+<p>/style></p>
+...
+<p class=”blogentry”>
+ Today was the best day ever ...
+</p>
+
+<h1>CSS with IDs</h1>
+<p>• Similarly, almost all HTML tags can have an ID.</p>
+<b>attribute:</b>
+<p>style type=”text/css”></p>
+ <p>#menubar {</p>
+ <p>font-size: 12pt;</p>
+<p> font-family: “Luxi Serif”, serif;</p>
+<p> }</p>
+<p>/style></p>
+...
+<p><ul id=”menubar”></p>
+ <p><li>Item 1</li> ...</p>
+<p></ul><p>
+
+<h1>Notes on CLASS and ID</h1>
+<p>• Use CLASS when a document contains (or may
+contain) many items of this type.</p>
+<p>– E.g.: blogEntry, nameList, properName.</p>
+<p>• Use ID when a document can only contain one
+item of this type.</p>
+<p>– E.g. pageTitle, mainNavigationBar</p>
+<p>• Choose CLASS and ID names wisely.</p>
+<p>– Good: <a id=”properName”>Pat Morin</a>.</p>
+<p>– Bad: <a id=”blueunderlinenowrap”>Pat Morin</a></p>
+
+
+
+
+
+
+<h1>The DIV and SPAN tags</h1>
+<p>• HTML has 2 tags, DIV and SPAN, that are.</p>
+<p>specifically used with CSS and CLASS and ID
+attributes.</p>
+<p>• A DIV tag contains a block of text.</p>
+<p>– Like a paragraph, section heading, or title.</p>
+<p>• A SPAN tag contains a short piece of text within a
+block</p>
+<p>– Like a proper name, or a dollar amount.</p>
+
+
+<b>Example of DIV and SPAN</b>
+<p><div class=”mainDocument”></p>
+<p>On his way to school,</p>
+<p><span class=”properName”>Uncle Rico</span></p>
+<p>stopped at the local groceteria and spent.</p>
+<p><span class=”money”>$4.55</span> on milk,
+bread, and honey.</p>
+<p></div></p>
+<p><div class=”about”></p>
+<p>This document was written by.</p>
+<p><span class=”properName”>Pedro Sanchez</span></p>
+<p>on <span class=”date”>Jan. 9th, 2007</span>.</p>
+<p></div></p>
+
+<h1>Typeface: font-family</h1>
+<p>• Consists of a comma-separated list of font names.</p>
+<p>h1 { font-family: “Times New Roman”,</p>
+ <p>“ Luxi Serif”,</p>
+<p> “ DejaVu LGC Serif”,</p>
+<p> serif;</p>
+<p>}</p>
+<p>• Not all fonts are available on all systems.</p>
+<p>– Browser will try fonts in order that they are specified.</p>
+<p>• Always make the last option one of the generic</p>
+<p>fonts: serif, sans-serif, cursive, fantasy, or
+monospace</p>
+
+
+<h1>Font Size: font-size</h1>
+<p>• Specified in one of the CSS size units.</p>
+<p>– 1em is the width of a letter m (relative to surrounding text).</p>
+<p>– 1pt is a standard typographic point (1/72 inches)</p>
+<p>– 1px is one screen pixel.</p>
+<p>– Keywords: xx-small, x-small, small, medium, large,
+x-large, xx-large are browser dependant</p>
+<p>– Percentages: XXX% relative to the surrounding code.</p>
+<p>• Points and pixels are extremely accurate but not
+resizeable</p>
+<p>h1 { font-size: 200%; }</p>
+<p>h2 { font-size: large; }</p>
+<p>h3 { font-size: medium; }</p>
+
+
+<h3>Bold Fonts: font-weight</h3>
+<p>• Can be one of normal, bold, bolder,</p>
+<p>lighter, 100, 200, ..., 900</p>
+<p>h1 { font-weight: bold;</p>
+<p> font-size: 200%;</p>
+<p>}</p>
+<p>h2 { font-weight: bold;</p>
+<p> font-size: medium;</p>
+<p>}</p>
+
+
+<h1>The Font Style: font-style</h1>
+<p>• Can be one of normal, italic, or oblique.</p>
+<p>• An italic font is usually slanted and maybe has</p>
+<b>.some curls added</b>
+<p>• An oblique font is a skew transformation of a
+regular font (not well supported)</p>
+<p>em { font-style: italic; }</p>
+<p>h1 { font-family: sans-serif;</p>
+<p> font-weight: bold;</p>
+<p> font-style: italic;</p>
+<p>}</p>
+
+<h1>Other Font Properties</h1>
+<p>• Use font-variant for producing small caps.</p>
+<p>• Use font-stretch to expand or condense a font</p>
+<p>• Use font as a shorthand to set all font properties
+at once</p>
+<p>h1 { font: italic</p>
+<p> small-caps</p></p>
+<p> bold
+ 12pt
+ sans-serif;</p>
+
+
+</body>
+</html>
